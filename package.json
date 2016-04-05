@@ -1,40 +1,45 @@
 {
-    "name": "vscode-console-wrapper",
-    "displayName": "vscode-console-wrapper",
-    "description": "Makes easier to log any code in console.",
-    "version": "0.0.1",
-    "publisher": "fabiodamasceno",
-    "engines": {
-        "vscode": "^0.10.10"
-    },
-    "categories": [
-        "Other"
+  "name": "vscode-console-wrapper",
+  "displayName": "vscode-console-wrapper",
+  "description": "Makes easier to log any code in console.",
+  "version": "0.0.1",
+  "publisher": "fabiodamasceno",
+  "engines": {
+    "vscode": "^0.10.10"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.consoleWrapper"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.consoleWrapper",
+        "title": "Console Wrapper"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.consoleWrapper"
-    ],
-    "main": "./out/src/extension",  
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.consoleWrapper",
-                "title": "Console Wrapper"
-            }
-        ],
-        "keybindings": {
-            "when": "editorTextFocus",
-            "command": "extension.consoleWrapper",
-            "key": "ctrl+shift+q",
-            "mac": "ctrl+q"
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^1.8.5",
-        "vscode": "^0.11.0"
+    "keybindings": {
+      "when": "editorTextFocus",
+      "command": "extension.consoleWrapper",
+      "key": "ctrl+shift+q",
+      "mac": "ctrl+q"
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js",
+    "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "typescript": "^1.8.5",
+    "vscode": "^0.11.0"
+  }
 }
