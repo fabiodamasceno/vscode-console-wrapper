@@ -1,7 +1,7 @@
 'use strict';
 
 import * as vscode from 'vscode';
-
+import consoleWrapper from './consoleWrapper';
 export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand("extension.consoleWrapper", () => {
         const editor = vscode.window.activeTextEditor;
@@ -11,11 +11,10 @@ export function activate(context: vscode.ExtensionContext) {
         var expandedSelection = undefined;
         expandedSelection = getSelection(editor);
         if (expandedSelection) {
-            var word = editor.document.getText(expandedSelection);
-            if (word) {
-                editor.edit((currentText) => { 
-                    let newText = '\n console.log("' + word + ': " , ' + word +');';
-                    currentText.insert(new vscode.Position(expandedSelection._end._line, 100000), newText);
+            var text = editor.document.getText(expandedSelection);
+            if (text) {
+                editor.edit((currentText) => {
+                    currentText.insert(new vscode.Position(expandedSelection._end._line, 100000), consoleWrapper.wrap(text));
                 });
             }
         }

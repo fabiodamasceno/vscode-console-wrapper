@@ -1,22 +1,18 @@
-//
-// Note: This example test is leveraging the Mocha test framework.
-// Please refer to their documentation on https://mochajs.org/ for help.
-//
 
-// The module 'assert' provides assertion methods from node
 import * as assert from 'assert';
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 import * as vscode from 'vscode';
-import * as myExtension from '../src/extension';
-
-// Defines a Mocha test suite to group tests of similar kind together
-suite("Extension Tests", () => {
-
-    // Defines a Mocha unit test
-    test("Something 1", () => {
-        assert.equal(-1, [1, 2, 3].indexOf(5));
-        assert.equal(-1, [1, 2, 3].indexOf(0));
+import consoleWrapper from '../src/consoleWrapper';
+suite('Console Wrapper Tests', () => {
+    
+    test('Wrap a simple text with console.log', () => {
+        assert.equal(consoleWrapper.wrap('wrap me'), '\n console.log("wrap me: ", wrap me);')
+    });
+    
+    test('Wrap a function call with console.log', () => {
+        assert.equal(consoleWrapper.wrap('butheresmynumber(callmemaybe)'), '\n console.log("butheresmynumber(callmemaybe): ", butheresmynumber(callmemaybe));')
+    });
+    
+    test('Wrap a complex quotation with console.log', () => {
+        assert.equal(consoleWrapper.wrap('butheresmynumber("callmemaybe")"'), '\n console.log("butheresmynumber("callmemaybe")": ", butheresmynumber("callmemaybe")");')
     });
 });
