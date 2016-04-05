@@ -1,9 +1,10 @@
 {
   "name": "vscode-console-wrapper",
   "displayName": "vscode-console-wrapper",
-  "description": "Makes easier to log any code in console.",
+  "description": "Makes easier to log any code through console in Visual Studio Code.",
   "version": "0.0.1",
   "publisher": "fabiodamasceno",
+  "license": "MIT",
   "engines": {
     "vscode": "^0.10.10"
   },
@@ -14,6 +15,23 @@
     "onCommand:extension.consoleWrapper"
   ],
   "main": "./out/src/extension",
+  "author": "fabiodamasceno",
+  "keywords": [
+    "console",
+    "console.log",
+    "vscode",
+    "logging",
+    "javascript",
+    "log"
+  ],
+  "bugs": {
+    "url": "https://github.com/fabiodamasceno/vscode-console-wrapper/issues"
+  },
+  "homepage": "https://github.com/fabiodamasceno/vscode-console-wrapper/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fabiodamasceno/vscode-console-wrapper.git"
+    },
   "contributes": {
     "commands": [
       {
