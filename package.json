@@ -2,7 +2,7 @@
   "name": "vscode-console-wrapper",
   "displayName": "vscode-console-wrapper",
   "description": "Makes easier to log any code through console in Visual Studio Code.",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "publisher": "fabiodamasceno",
   "license": "MIT",
   "engines": {

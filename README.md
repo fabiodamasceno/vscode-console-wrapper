@@ -3,14 +3,16 @@
 [![Build Status](https://travis-ci.org/fabiodamasceno/vscode-console-wrapper.svg?branch=master)](https://travis-ci.org/fabiodamasceno/vscode-console-wrapper)
 [![Coverage Status](https://coveralls.io/repos/github/fabiodamasceno/vscode-console-wrapper/badge.svg?branch=master)](https://coveralls.io/github/fabiodamasceno/vscode-console-wrapper?branch=master)
 
-Makes easier to console.log(things) in Visual Studio Code
+Wraps console.log() any code in Visual Studio Code with one step.
 
+## Installing
 
-##usage
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/akamud.vscode-caniuse)  
+
+##Usage
 
 * Select what you want to log.
 * Press Ctrl+Shift+Q.
-
 
 ## License
 [MIT License](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/LICENSE)
