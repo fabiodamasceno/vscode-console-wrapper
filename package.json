@@ -1,0 +1,40 @@
+{
+    "name": "vscode-console-wrapper",
+    "displayName": "vscode-console-wrapper",
+    "description": "Makes easier to log any code in console.",
+    "version": "0.0.1",
+    "publisher": "fabiodamasceno",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.consoleWrapper"
+    ],
+    "main": "./out/src/extension",  
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.consoleWrapper",
+                "title": "Console Wrapper"
+            }
+        ],
+        "keybindings": {
+            "when": "editorTextFocus",
+            "command": "extension.consoleWrapper",
+            "key": "ctrl+shift+q",
+            "mac": "ctrl+q"
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
