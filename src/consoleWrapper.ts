@@ -1,7 +1,7 @@
 
 let ConsoleWrapper = {
     wrap : (text: string) => {
-        return `\n console.log("${text}: ", ${text});`;
+        return `\n console.log("${text} ", ${text});`;
     }
 };
 
