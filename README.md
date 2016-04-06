@@ -7,7 +7,10 @@ Wraps console.log() any code in Visual Studio Code with one step.
 
 ## Installing
 
-This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items/akamud.vscode-caniuse)  
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=fabiodam.vscode-console-wrapper) 
+```
+ext install vscode-console-wrapper
+``` 
 
 ##Usage
 
