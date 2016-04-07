@@ -1,67 +1,67 @@
 {
-  "name": "vscode-console-wrapper",
-  "displayName": "Console Wrapper",
-  "description": "Makes easier to log any code through console in Visual Studio Code.",
-  "version": "1.0.0",
-  "publisher": "fabiodam",
-  "license": "MIT",
-  "icon": "",
-  "engines": {
-    "vscode": "^0.10.10"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:extension.consoleWrapper"
-  ],
-  "main": "./out/src/extension",
-  "author": "fabiodamasceno",
-  "keywords": [
-    "console",
-    "console.log",
-    "vscode",
-    "logging",
-    "javascript",
-    "log"
-  ],
-  "bugs": {
-    "url": "https://github.com/fabiodamasceno/vscode-console-wrapper/issues"
-  },
-  "homepage": "https://github.com/fabiodamasceno/vscode-console-wrapper/blob/master/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fabiodamasceno/vscode-console-wrapper.git"
-  },
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.consoleWrapper",
-        "title": "Console Wrapper"
-      }
+    "name": "vscode-console-wrapper",
+    "displayName": "Console Wrapper",
+    "description": "Makes easier to log any code through console in Visual Studio Code.",
+    "version": "0.4.0",
+    "publisher": "fabiodam",
+    "license": "MIT",
+    "icon": "",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Other"
     ],
-    "keybindings": {
-      "when": "editorTextFocus",
-      "command": "extension.consoleWrapper",
-      "key": "ctrl+shift+q",
-      "mac": "ctrl+q"
+    "activationEvents": [
+        "onCommand:extension.consoleWrapper"
+    ],
+    "main": "./out/src/extension",
+    "author": "fabiodamasceno",
+    "keywords": [
+        "console",
+        "console.log",
+        "vscode",
+        "logging",
+        "javascript",
+        "log"
+    ],
+    "bugs": {
+        "url": "https://github.com/fabiodamasceno/vscode-console-wrapper/issues"
+    },
+    "homepage": "https://github.com/fabiodamasceno/vscode-console-wrapper/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fabiodamasceno/vscode-console-wrapper.git"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.consoleWrapper",
+                "title": "Console Wrapper"
+            }
+        ],
+        "keybindings": {
+            "when": "editorTextFocus",
+            "command": "extension.consoleWrapper",
+            "key": "ctrl+shift+q",
+            "mac": "ctrl+q"
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js",
+        "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js"
+    },
+    "devDependencies": {
+        "coveralls": "^2.11.9",
+        "istanbul": "^0.4.2",
+        "mocha": "^2.4.5",
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    },
+    "dependencies": {
+        "copy-paste": "^1.1.4"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js",
-    "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/extension.test.js"
-  },
-  "devDependencies": {
-    "coveralls": "^2.11.9",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5",
-    "typescript": "^1.8.5",
-    "vscode": "^0.11.0"
-  },
-  "dependencies": {
-    "copy-paste": "^1.1.4"
-  }
 }
