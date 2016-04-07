@@ -1,7 +1,7 @@
 'use strict';
 import * as vscode from 'vscode';
 import consoleWrapper from './consoleWrapper';
-require('copy-paste').global();
+import {paste, copy} from 'copy-paste';
 
 export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand("extension.consoleWrapper", () => {
