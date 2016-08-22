@@ -14,8 +14,15 @@ ext install vscode-console-wrapper
 
 ##Usage
 
+With selection:
 * Select what you want to log.
 * Press Ctrl+Shift+Q.
+
+You can also copy some code:
+* Copy anything
+* Press Ctrl+Shift+Q
+
+Voi la!
 
 ## License
 [MIT License](https://raw.githubusercontent.com/akamud/vscode-caniuse/master/LICENSE)
