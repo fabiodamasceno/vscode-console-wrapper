@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
             let text = editor.document.getText(expandedSelection);
             if (text) {
                 editor.edit((currentText) => {
-                    currentText.insert(new vscode.Position(expandedSelection.end.line, 100000), consoleWrapper.wrap(text));
+                    currentText.insert(new vscode.Position(expandedSelection.end.line, 100000), consoleWrapper.wrap(text, getLineIndentation(expandedSelection)));
                 });
             }
         }
@@ -45,4 +45,16 @@ function getSelection(editor: vscode.TextEditor): vscode.Selection {
         return null;
     }
     return selection;
+}
+
+function getLineIndentation(selection: vscode.Selection) {
+    const { document, options: { tabSize, insertSpaces } } = vscode.window.activeTextEditor
+    let indentStr = insertSpaces ? new Array((tabSize as number) + 1).join(' ') : '\t'
+
+    let line = document.lineAt(selection.active.line)
+    let indentLength = line.firstNonWhitespaceCharacterIndex
+    if (/\{$/.test(line.text)) {
+        indentLength++
+    }
+    return new Array(indentLength).join(indentStr)
 }
