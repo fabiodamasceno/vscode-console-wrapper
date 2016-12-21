@@ -1,7 +1,6 @@
-
 let ConsoleWrapper = {
-    wrap : (text: string) => {
-        return `\n console.log("${text} ", ${text});`;
+    wrap : (text: string, indentation = '') => {
+        return `\n${indentation}console.log("${text} ", ${text});`;
     }
 };
 
